@@ -1,0 +1,54 @@
+@import '_variables';
+@import '_mixins';
+.bug__modal__container {
+  height: auto;
+  .bug__modal__body {
+    .bug__modal__form__controls {
+      display: flex;
+      flex-direction: column;
+      .group {
+        margin-top: 20px;
+        text-align: left;
+        label {
+          font-weight: 400;
+        }
+        textarea {
+          width: 100%;
+          padding: 5px 12px;
+        }
+        textarea:focus {
+          outline-offset: 0px !important;
+          outline: 0px;
+          border: 1px solid $main-color;
+          padding: 5px 12px;
+          color: $main-color;
+          border-radius: 2px;
+        }
+      }
+      //Mixin possible
+      .btn-group {
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        .close-btn {
+          @include secondary-btn($white, $danger, $danger);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bug__modal__container {
+    .bug__modal__body {
+      .bug__modal__form__controls {
+        .btn-group {
+          margin-top: 40px;
+          .close-btn {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
